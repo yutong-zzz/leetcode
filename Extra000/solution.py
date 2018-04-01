@@ -15,7 +15,7 @@ def reverselist(ll):
         cur = tmp
     return l
 
-
+# test
 head=ListNode(1);
 p1=ListNode(2);
 p2=ListNode(3); 
