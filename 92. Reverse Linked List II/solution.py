@@ -16,23 +16,19 @@ class Solution(object):
             return head
         dummy_node = ListNode(0)
         dummy_node.next = head
-        p = dummy_node
-        for i in range(m):
-            fix_start = p
-            p = p.next
+        pm = pn = dummy_node
+        for i in range(m-1):
+            pm = pm.next
+        for i in range(n):
+            pn = pn.next
+        
         for i in range(n-m):
             # reverse
-            pre = p
-            cur = pre.next
-            tmp = cur.next
-            cur.next = pre
-            pre = cur
-            cur = tmp
-        fix_end = cur
-        fix_start.next = pre
-        p.next = fix_end
-        head = dummy_node.next
-        return head
+            cur = pm.next
+            pm.next = pm.next.next
+            cur.next = pn.next
+            pn.next = cur
+        return dummy_node.next
 
 
 
