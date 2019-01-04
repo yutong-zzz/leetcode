@@ -1,2 +1,2 @@
-# README
-leetcode practice
+# leetcode
+practice of leetcode
